@@ -1,3 +1,7 @@
+# data related
+data/bert_embeddings.npy
+data/SVM_clf.pkl
+
 # vscode related
 .vscode/
 

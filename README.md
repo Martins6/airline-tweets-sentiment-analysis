@@ -1,6 +1,12 @@
 # Airline Tweet Sentiment-Analysis
 
-Project to demostrate ML capabilities to make predictions on sentiments. Specifically, we compare three models and discuss a little about them.
+Project to demostrate ML capabilities to make predictions on text sentiment. Specifically, I compare three models and discuss a little about them. Also, I've built a quick app to visualize in an interactive way the results of the model.
+
+There is only one [notebook](notebooks/main.ipynb) containing all of the analysis and model.
+
+The streamlit app can be found inside the [streamlit_app](streamlit_app/main.py) folder.
+
+![Streamlit app](images/streamlit_app.png)
 
 ## Data
 
@@ -31,11 +37,25 @@ In relation to model performance:
 
 * Train a more sophisticated Neural Network such as a Convolution Neural Network, or a Recurrente Neural Network, or even Transformer architecures.
 
-* We could perform hyper-parameter optimization for the SVM approaches and for the Neural Networks too.
+* I could perform hyper-parameter optimization for the SVM approaches and for the Neural Networks too.
 
 In relation to data vizualization and exploration:
 
-* We could build model explanability to inform us of the key phrases or words that made the model decide for each sentiment.
+* I could build model explanability to inform us of the key phrases or words that made the model decide for each sentiment.
+
+## Replicating or Installation
+
+To replicate the results, first download the repository via Git. Then, if you do not have it, please install [Poetry](https://python-poetry.org/) for packaging and dependencies installation, afterwards just run:
+
+```{bash}
+poetry install
+```
+
+For the notebook, that's it. It would be ready to replicate. For the streamlit app, first run the notebook to generate the results and then, just run:
+
+```{bash}
+streamlit run streamlit_app/main.py
+```
 
 ## References
 

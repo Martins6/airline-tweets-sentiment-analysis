@@ -255,7 +255,7 @@ optional = false
 python-versions = "*"
 
 [package.extras]
-test = ["flake8 (==3.7.8)", "hypothesis (==3.55.3)"]
+test = ["hypothesis (==3.55.3)", "flake8 (==3.7.8)"]
 
 [[package]]
 name = "cycler"
@@ -360,7 +360,7 @@ python-versions = ">=3.7"
 
 [[package]]
 name = "fsspec"
-version = "2022.5.0"
+version = "2022.7.1"
 description = "File-system specification"
 category = "main"
 optional = false
@@ -481,13 +481,13 @@ tqdm = "*"
 typing-extensions = ">=3.7.4.3"
 
 [package.extras]
-all = ["pytest", "pytest-cov", "datasets", "soundfile", "black (>=22.0,<23.0)", "isort (>=5.5.4)", "flake8 (>=3.8.3)"]
-dev = ["pytest", "pytest-cov", "datasets", "soundfile", "black (>=22.0,<23.0)", "isort (>=5.5.4)", "flake8 (>=3.8.3)"]
-fastai = ["toml", "fastai (>=2.4)", "fastcore (>=1.3.27)"]
-quality = ["black (>=22.0,<23.0)", "isort (>=5.5.4)", "flake8 (>=3.8.3)"]
-tensorflow = ["tensorflow", "pydot", "graphviz"]
-testing = ["pytest", "pytest-cov", "datasets", "soundfile"]
 torch = ["torch"]
+testing = ["soundfile", "datasets", "pytest-cov", "pytest"]
+tensorflow = ["graphviz", "pydot", "tensorflow"]
+quality = ["flake8 (>=3.8.3)", "isort (>=5.5.4)", "black (>=22.0,<23.0)"]
+fastai = ["fastcore (>=1.3.27)", "fastai (>=2.4)", "toml"]
+dev = ["flake8 (>=3.8.3)", "isort (>=5.5.4)", "black (>=22.0,<23.0)", "soundfile", "datasets", "pytest-cov", "pytest"]
+all = ["flake8 (>=3.8.3)", "isort (>=5.5.4)", "black (>=22.0,<23.0)", "soundfile", "datasets", "pytest-cov", "pytest"]
 
 [[package]]
 name = "idna"
@@ -1364,7 +1364,7 @@ python-versions = ">=3.7"
 packaging = "*"
 
 [package.extras]
-test = ["pytest (>=6,!=7.0.0,!=7.0.1)", "pytest-cov (>=3.0.0)", "pytest-qt"]
+test = ["pytest-qt", "pytest-cov (>=3.0.0)", "pytest (>=6,!=7.0.0,!=7.0.1)"]
 
 [[package]]
 name = "regex"
@@ -1449,10 +1449,10 @@ scipy = ">=1.3.2"
 threadpoolctl = ">=2.0.0"
 
 [package.extras]
-benchmark = ["matplotlib (>=3.1.2)", "pandas (>=1.0.5)", "memory-profiler (>=0.57.0)"]
-docs = ["matplotlib (>=3.1.2)", "scikit-image (>=0.14.5)", "pandas (>=1.0.5)", "seaborn (>=0.9.0)", "memory-profiler (>=0.57.0)", "sphinx (>=4.0.1)", "sphinx-gallery (>=0.7.0)", "numpydoc (>=1.2.0)", "Pillow (>=7.1.2)", "sphinx-prompt (>=1.3.0)", "sphinxext-opengraph (>=0.4.2)"]
-examples = ["matplotlib (>=3.1.2)", "scikit-image (>=0.14.5)", "pandas (>=1.0.5)", "seaborn (>=0.9.0)"]
-tests = ["matplotlib (>=3.1.2)", "scikit-image (>=0.14.5)", "pandas (>=1.0.5)", "pytest (>=5.0.1)", "pytest-cov (>=2.9.0)", "flake8 (>=3.8.2)", "black (>=22.3.0)", "mypy (>=0.770)", "pyamg (>=4.0.0)", "numpydoc (>=1.2.0)"]
+tests = ["numpydoc (>=1.2.0)", "pyamg (>=4.0.0)", "mypy (>=0.770)", "black (>=22.3.0)", "flake8 (>=3.8.2)", "pytest-cov (>=2.9.0)", "pytest (>=5.0.1)", "pandas (>=1.0.5)", "scikit-image (>=0.14.5)", "matplotlib (>=3.1.2)"]
+examples = ["seaborn (>=0.9.0)", "pandas (>=1.0.5)", "scikit-image (>=0.14.5)", "matplotlib (>=3.1.2)"]
+docs = ["sphinxext-opengraph (>=0.4.2)", "sphinx-prompt (>=1.3.0)", "Pillow (>=7.1.2)", "numpydoc (>=1.2.0)", "sphinx-gallery (>=0.7.0)", "sphinx (>=4.0.1)", "memory-profiler (>=0.57.0)", "seaborn (>=0.9.0)", "pandas (>=1.0.5)", "scikit-image (>=0.14.5)", "matplotlib (>=3.1.2)"]
+benchmark = ["memory-profiler (>=0.57.0)", "pandas (>=1.0.5)", "matplotlib (>=3.1.2)"]
 
 [[package]]
 name = "scipy"
@@ -1496,9 +1496,9 @@ optional = false
 python-versions = "*"
 
 [package.extras]
-nativelib = ["pyobjc-framework-cocoa", "pywin32"]
-objc = ["pyobjc-framework-cocoa"]
 win32 = ["pywin32"]
+objc = ["pyobjc-framework-cocoa"]
+nativelib = ["pywin32", "pyobjc-framework-cocoa"]
 
 [[package]]
 name = "sentence-transformers"
@@ -1583,41 +1583,41 @@ executing = "*"
 pure-eval = "*"
 
 [package.extras]
-tests = ["pytest", "typeguard", "pygments", "littleutils", "cython"]
+tests = ["cython", "littleutils", "pygments", "typeguard", "pytest"]
 
 [[package]]
 name = "streamlit"
-version = "1.10.0"
+version = "1.11.1"
 description = "The fastest way to build data apps in Python"
 category = "main"
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.7"
 
 [package.dependencies]
 altair = ">=3.2.0"
-attrs = "*"
-blinker = "*"
+attrs = ">=16.0.0"
+blinker = ">=1.0.0"
 cachetools = ">=4.0"
 click = ">=7.0"
 gitpython = "!=3.1.19"
 importlib-metadata = ">=1.4"
 numpy = "*"
-packaging = "*"
+packaging = ">=14.1"
 pandas = ">=0.21.0"
 pillow = ">=6.2.0"
 protobuf = ">=3.12,<4"
-pyarrow = "*"
+pyarrow = ">=4.0"
 pydeck = ">=0.1.dev5"
 pympler = ">=0.9"
 python-dateutil = "*"
-requests = "*"
-rich = "*"
+requests = ">=2.4"
+rich = ">=10.11.0"
 semver = "*"
 toml = "*"
 tornado = ">=5.0"
-typing-extensions = "*"
-tzlocal = "*"
-validators = "*"
+typing-extensions = ">=3.10.0.0"
+tzlocal = ">=1.1"
+validators = ">=0.2"
 watchdog = {version = "*", markers = "platform_system != \"Darwin\""}
 
 [[package]]
@@ -1693,8 +1693,8 @@ python-versions = ">=3.6"
 webencodings = ">=0.4"
 
 [package.extras]
-doc = ["sphinx", "sphinx-rtd-theme"]
-test = ["pytest", "pytest-cov", "pytest-flake8", "pytest-isort", "coverage"]
+test = ["coverage", "pytest-isort", "pytest-flake8", "pytest-cov", "pytest"]
+doc = ["sphinx-rtd-theme", "sphinx"]
 
 [[package]]
 name = "tokenizers"
@@ -1768,14 +1768,14 @@ packaging = "*"
 torch = ">=1.3.1"
 
 [package.extras]
-all = ["pystoi", "torchvision (>=0.8)", "pycocotools", "sphinx-copybutton (>=0.3)", "nbsphinx (>=0.8)", "docutils (>=0.16)", "sphinxcontrib-fulltoc (>=1.0)", "sphinx-paramlinks (>=0.5.1)", "sphinx-autodoc-typehints (>=1.0)", "sphinx (>=4.0,<5.0)", "myst-parser", "sphinx-togglebutton (>=0.2)", "pandoc (>=1.0)", "sphinxcontrib-mockautodoc", "torchvision", "torch-fidelity", "lpips", "scipy", "pytorch-lightning (>=1.5)", "mypy (>=0.790)", "transformers (>=4.0)", "pytorch-msssim", "scikit-image (>0.17.1)", "fast-bss-eval (>=0.1.0)", "rouge-score (>=0.0.4)", "torch-complex", "bert-score (==0.3.10)", "cloudpickle (>=1.3)", "jiwer (>=2.3.0)", "pypesq", "coverage (>5.2)", "codecov (>=2.1)", "huggingface-hub (<0.7)", "sacrebleu (>=2.0.0)", "pytest-cov (>2.10)", "psutil", "pre-commit (>=1.0)", "requests", "pytest (>=6.0.0,<7.0.0)", "twine (>=3.2)", "scikit-learn (>1.0,<1.1.1)", "pytest-doctestplus (>=0.9.0)", "pytest-timeout", "phmdoctest (>=1.1.1)", "check-manifest", "mir-eval (>=0.6)", "fire", "nltk (>=3.6)", "regex (>=2021.9.24)", "tqdm (>=4.41.0)"]
-audio = ["pystoi"]
-detection = ["torchvision (>=0.8)", "pycocotools"]
-docs = ["sphinx-copybutton (>=0.3)", "nbsphinx (>=0.8)", "docutils (>=0.16)", "sphinxcontrib-fulltoc (>=1.0)", "sphinx-paramlinks (>=0.5.1)", "sphinx-autodoc-typehints (>=1.0)", "sphinx (>=4.0,<5.0)", "myst-parser", "sphinx-togglebutton (>=0.2)", "pandoc (>=1.0)", "sphinxcontrib-mockautodoc"]
-image = ["torchvision", "torch-fidelity", "lpips", "scipy"]
+text = ["tqdm (>=4.41.0)", "regex (>=2021.9.24)", "nltk (>=3.6)"]
+test = ["fire", "mir-eval (>=0.6)", "check-manifest", "phmdoctest (>=1.1.1)", "pytest-timeout", "pytest-doctestplus (>=0.9.0)", "scikit-learn (>1.0,<1.1.1)", "twine (>=3.2)", "pytest (>=6.0.0,<7.0.0)", "requests", "pre-commit (>=1.0)", "psutil", "pytest-cov (>2.10)", "sacrebleu (>=2.0.0)", "huggingface-hub (<0.7)", "codecov (>=2.1)", "coverage (>5.2)", "pypesq", "jiwer (>=2.3.0)", "cloudpickle (>=1.3)", "bert-score (==0.3.10)", "torch-complex", "rouge-score (>=0.0.4)", "pycocotools", "fast-bss-eval (>=0.1.0)", "scikit-image (>0.17.1)", "pytorch-msssim", "transformers (>=4.0)", "mypy (>=0.790)"]
 integrate = ["pytorch-lightning (>=1.5)"]
-test = ["mypy (>=0.790)", "transformers (>=4.0)", "pytorch-msssim", "scikit-image (>0.17.1)", "fast-bss-eval (>=0.1.0)", "pycocotools", "rouge-score (>=0.0.4)", "torch-complex", "bert-score (==0.3.10)", "cloudpickle (>=1.3)", "jiwer (>=2.3.0)", "pypesq", "coverage (>5.2)", "codecov (>=2.1)", "huggingface-hub (<0.7)", "sacrebleu (>=2.0.0)", "pytest-cov (>2.10)", "psutil", "pre-commit (>=1.0)", "requests", "pytest (>=6.0.0,<7.0.0)", "twine (>=3.2)", "scikit-learn (>1.0,<1.1.1)", "pytest-doctestplus (>=0.9.0)", "pytest-timeout", "phmdoctest (>=1.1.1)", "check-manifest", "mir-eval (>=0.6)", "fire"]
-text = ["nltk (>=3.6)", "regex (>=2021.9.24)", "tqdm (>=4.41.0)"]
+image = ["scipy", "lpips", "torch-fidelity", "torchvision"]
+docs = ["sphinxcontrib-mockautodoc", "pandoc (>=1.0)", "sphinx-togglebutton (>=0.2)", "myst-parser", "sphinx (>=4.0,<5.0)", "sphinx-autodoc-typehints (>=1.0)", "sphinx-paramlinks (>=0.5.1)", "sphinxcontrib-fulltoc (>=1.0)", "docutils (>=0.16)", "nbsphinx (>=0.8)", "sphinx-copybutton (>=0.3)"]
+detection = ["pycocotools", "torchvision (>=0.8)"]
+audio = ["pystoi"]
+all = ["tqdm (>=4.41.0)", "regex (>=2021.9.24)", "nltk (>=3.6)", "fire", "mir-eval (>=0.6)", "check-manifest", "phmdoctest (>=1.1.1)", "pytest-timeout", "pytest-doctestplus (>=0.9.0)", "scikit-learn (>1.0,<1.1.1)", "twine (>=3.2)", "pytest (>=6.0.0,<7.0.0)", "requests", "pre-commit (>=1.0)", "psutil", "pytest-cov (>2.10)", "sacrebleu (>=2.0.0)", "huggingface-hub (<0.7)", "codecov (>=2.1)", "coverage (>5.2)", "pypesq", "jiwer (>=2.3.0)", "cloudpickle (>=1.3)", "bert-score (==0.3.10)", "torch-complex", "rouge-score (>=0.0.4)", "fast-bss-eval (>=0.1.0)", "scikit-image (>0.17.1)", "pytorch-msssim", "transformers (>=4.0)", "mypy (>=0.790)", "pytorch-lightning (>=1.5)", "scipy", "lpips", "torch-fidelity", "torchvision", "sphinxcontrib-mockautodoc", "pandoc (>=1.0)", "sphinx-togglebutton (>=0.2)", "myst-parser", "sphinx (>=4.0,<5.0)", "sphinx-autodoc-typehints (>=1.0)", "sphinx-paramlinks (>=0.5.1)", "sphinxcontrib-fulltoc (>=1.0)", "docutils (>=0.16)", "nbsphinx (>=0.8)", "sphinx-copybutton (>=0.3)", "pycocotools", "torchvision (>=0.8)", "pystoi"]
 
 [[package]]
 name = "torchvision"
@@ -2027,7 +2027,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "23dd362f495aa202a2cf5181cc6109a485bb61f34ff102e6a0379a6166d35289"
+content-hash = "c4de322001b55d7eb92fbe3f6db1d8c47819b69c32ae2b57fbba9f1f7b641158"
 
 [metadata.files]
 absl-py = [
@@ -2382,8 +2382,8 @@ frozenlist = [
     {file = "frozenlist-1.3.0.tar.gz", hash = "sha256:ce6f2ba0edb7b0c1d8976565298ad2deba6f8064d2bebb6ffce2ca896eb35b0b"},
 ]
 fsspec = [
-    {file = "fsspec-2022.5.0-py3-none-any.whl", hash = "sha256:2c198c50eb541a80bbd03540b07602c4a957366f3fb416a1f270d34bd4ff0926"},
-    {file = "fsspec-2022.5.0.tar.gz", hash = "sha256:7a5459c75c44e760fbe6a3ccb1f37e81e023cde7da8ba20401258d877ec483b4"},
+    {file = "fsspec-2022.7.1-py3-none-any.whl", hash = "sha256:36c5a8e7c4fc20cf32ef6934ac0a122accc8a593ddc8478d30c3ca4dbbd95500"},
+    {file = "fsspec-2022.7.1.tar.gz", hash = "sha256:7f9fb19d811b027b97c4636c6073eb53bc4cbee2d3c4b33fa88b9f26906fd7d7"},
 ]
 gitdb = [
     {file = "gitdb-4.0.9-py3-none-any.whl", hash = "sha256:8033ad4e853066ba6ca92050b9df2f89301b8fc8bf7e9324d412a63f8bf1a8fd"},
@@ -3401,8 +3401,8 @@ stack-data = [
     {file = "stack_data-0.3.0.tar.gz", hash = "sha256:77bec1402dcd0987e9022326473fdbcc767304892a533ed8c29888dacb7dddbc"},
 ]
 streamlit = [
-    {file = "streamlit-1.10.0-py2.py3-none-any.whl", hash = "sha256:4febd37144a62177e583d6970ab50f351a2bfd4eb112cf19e38c25b12246a4db"},
-    {file = "streamlit-1.10.0.tar.gz", hash = "sha256:9479d623dd4bec1fc7bd27e85d5012672351210e640889022ee7b4631c4efb2c"},
+    {file = "streamlit-1.11.1-py2.py3-none-any.whl", hash = "sha256:f861ae2f752780f0e02ce1b1f505d475126c4ecc214e0eddeb3baf869a74328d"},
+    {file = "streamlit-1.11.1.tar.gz", hash = "sha256:0167dfe66904845d91854db60492e460f2ec0777cf341cb185f1059a4701e5c6"},
 ]
 tensorboard = [
     {file = "tensorboard-2.9.1-py3-none-any.whl", hash = "sha256:baa727f791776f9e5841d347127720ceed4bbd59c36b40604b95fb2ae6029276"},
